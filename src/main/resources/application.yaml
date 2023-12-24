@@ -36,10 +36,16 @@ server:
 
 # lets use a different management port in case you need to listen to HTTP requests on 8080
 management:
+  endpoint:
+    health:
+      show-details: "ALWAYS"
+      probes:
+        enabled: true
   server:
     port: 8081
     address: 0.0.0.0
   endpoints:
+    enabled-by-default: true
     web:
       exposure:
         include: "*"
